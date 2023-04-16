@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDoApp</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <div class="input-area">
+        <input id="add-text" placeholder="TODOを入力">
+        <button id="add-button"> ADD </button>
+    </div>
+    <div class="imcomplete-area">
+        <p class="title">Unfinished</p>
+        <ul id="unfinished-area">
+            <div class="list-row">
+                <li>TODOです</li>
+                <button>DONE</button>
+                <button>DELETE</button>
+            </div>
+            <div class="list-row">
+                <li>TODOです</li>
+                <button>DONE</button>
+                <button>DELETE</button>
+            </div>
+        </ul>
+    </div>
+    <div class="complete-area">
+        <p class="title">DONE TODO</p>
+        <ul>
+            <div class="list-row">
+                <li>TODOでした</li>
+                <button>BACK</button>
+            </div>
+        </ul>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
