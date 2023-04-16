@@ -38,8 +38,3 @@ const onClickAdd = () => {
 }
 
 document.getElementById('add-button').addEventListener("click", () => onClickAdd());
-
-/* const el = document.getElementById('add-button');
-if (el) {
-  el.addEventListener('click', onClickAdd, false);
-} */
