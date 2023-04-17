@@ -16,7 +16,16 @@ const onClickAdd = () => {
     const doneButton = document.createElement("button");
     doneButton.innerText = "DONE";
     doneButton.addEventListener("click", () => {
-      alert("DONE!");
+      //完了リストに追加する要素
+      const addTarget = doneButton.parentNode;
+
+      //TODOテキストを取得
+      const text  =addTarget.firstElementChild.innerText;
+
+      //div以下を初期化
+      addTarget.textContent = null;
+      console.log(addTarget);
+
     })
 
     //button(DELETE)生成
@@ -24,8 +33,7 @@ const onClickAdd = () => {
     deleteButton.innerText = "DELETE";
     deleteButton.addEventListener("click", () => {
       //押されたdeleteボタンの親タグ(div)を未完了リストから削除
-      const deleteTarget = deleteButton.parentNode;
-      document.getElementById("unfinished-area").removeChild(deleteTarget);
+      deleteFromIncompleteList(deleteButton.parentNode);
     })
     
     //divの子要素に各要素を設定
@@ -33,8 +41,14 @@ const onClickAdd = () => {
     div.appendChild(doneButton);
     div.appendChild(deleteButton);
 
-    //unfinishedに追加
-    document.getElementById("unfinished-area").appendChild(div);
+    //未完了リストに追加
+    document.getElementById("incomplete-list").appendChild(div);
+
+    //未完了リストから指定の要素を削除
+    const deleteFromIncompleteList = (target) => {
+      const deleteTarget = deleteButton.parentNode;
+      document.getElementById("incomplete-list").removeChild(target);
+    } 
 }
 
 document.getElementById('add-button').addEventListener("click", () => onClickAdd());
